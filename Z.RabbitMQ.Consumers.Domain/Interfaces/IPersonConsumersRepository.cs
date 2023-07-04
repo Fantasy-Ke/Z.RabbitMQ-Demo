@@ -2,7 +2,7 @@
 
 namespace Z.RabbitMQ.Consumers.Domain.Interfaces
 {
-    public interface IPersonRepository
+    public interface IPersonConsumersRepository
     {
         Task<IEnumerable<Person>> GetPersons();
         Person GetPersonById(int Id);

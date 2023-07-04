@@ -19,11 +19,12 @@ namespace Z.RabbitMQ.Bus
         private readonly List<Type> _eventTypes;
         private readonly IServiceProvider _serviceProvider;
 
-        public ZRabbitMQBus(IMediator mediator)
+        public ZRabbitMQBus(IMediator mediator, IServiceProvider serviceProvider)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
+            _serviceProvider = serviceProvider;
         }
 
         public Task SendCommandsAsync<T>(T command) where T : EventCommandClass

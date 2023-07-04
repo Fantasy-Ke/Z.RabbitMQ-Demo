@@ -4,11 +4,11 @@ using Z.RabbitMQ.Consumers.Domain.Models;
 
 namespace Z.RabbitMQ.Consumers.Data.Repository
 {
-    public class EmployeeRepository : IPersonRepository
+    public class PersonConsumersRepository : IPersonConsumersRepository
     {
         private readonly ConsumersDbContext _context;
 
-        public EmployeeRepository(ConsumersDbContext context)
+        public PersonConsumersRepository(ConsumersDbContext context)
         {
             _context = context;
         }

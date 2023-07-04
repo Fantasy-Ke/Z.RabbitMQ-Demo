@@ -6,4 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RabbitMQ.Consumers.API\RabbitMQ.Consumers.API.csproj" />
+    <ProjectReference Include="..\RabbitMQ.Producer.API\RabbitMQ.Producer.API.csproj" />
+    <ProjectReference Include="..\Z.RabbitMQ.Bus\Z.RabbitMQ.Bus.csproj" />
+    <ProjectReference Include="..\Z.RabbitMQ.Consumers.Application\Z.RabbitMQ.Consumers.Application.csproj" />
+    <ProjectReference Include="..\Z.RabbitMQ.Consumers.Data\Z.RabbitMQ.Consumers.Data.csproj" />
+    <ProjectReference Include="..\Z.RabbitMQ.Consumers.Domain\Z.RabbitMQ.Consumers.Domain.csproj" />
+    <ProjectReference Include="..\Z.RabbitMQ.Domain.Core\Z.RabbitMQ.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

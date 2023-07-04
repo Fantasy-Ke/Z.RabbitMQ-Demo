@@ -6,9 +6,9 @@ namespace Z.RabbitMQ.Consumers.Application.Services
 {
     public class PersonConsumersService : IPersonsConsumersService
     {
-        private readonly IPersonRepository _personRepository;
+        private readonly IPersonConsumersRepository _personRepository;
 
-        public PersonConsumersService(IPersonRepository personRepository)
+        public PersonConsumersService(IPersonConsumersRepository personRepository)
         {
             _personRepository = personRepository;
         }
