@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using Z.RabbitMQ.Consumers.Domain.Commands;
-using Z.RabbitMQ.Consumers.Domain.Events;
+using Z.RabbitMQ.Producer.Domain.Commands;
+using Z.RabbitMQ.Producer.Domain.Events;
 using Z.RabbitMQ.Domain.Core.Bus;
 
-namespace Z.RabbitMQ.Consumers.Domain.CommandHandlers
+namespace Z.RabbitMQ.Producer.Domain.CommandHandlers
 {
     public class UpdatePersonCommandHandler : IRequestHandler<UpdatePersonCommand, bool>
     {

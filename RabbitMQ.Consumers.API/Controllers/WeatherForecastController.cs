@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace RabbitMQ.Producer.API.Controllers
+namespace RabbitMQ.Consumers.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

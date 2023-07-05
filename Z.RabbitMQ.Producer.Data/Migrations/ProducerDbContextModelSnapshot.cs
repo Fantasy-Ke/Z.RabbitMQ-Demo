@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Z.RabbitMQ.Consumers.Data;
+using Z.RabbitMQ.Producer.Data;
 
 #nullable disable
 
-namespace Z.RabbitMQ.Consumers.Data.Migrations
+namespace Z.RabbitMQ.Producer.Data.Migrations
 {
-    [DbContext(typeof(ConsumersDbContext))]
-    partial class ConsumersDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ProducerDbContext))]
+    partial class ProducerDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

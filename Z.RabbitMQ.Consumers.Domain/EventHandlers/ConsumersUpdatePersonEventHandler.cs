@@ -1,14 +1,14 @@
 ﻿using Z.RabbitMQ.Domain.Core.Bus;
-using Z.RabbitMQ.Producer.Domain.Events;
-using Z.RabbitMQ.Producer.Domain.Interfaces;
-using Z.RabbitMQ.Producer.Domain.Models;
+using Z.RabbitMQ.Consumers.Domain.Events;
+using Z.RabbitMQ.Consumers.Domain.Interfaces;
+using Z.RabbitMQ.Consumers.Domain.Models;
 
-namespace Z.RabbitMQ.Producer.Domain.EventHandlers
+namespace Z.RabbitMQ.Consumers.Domain.EventHandlers
 {
-    public class ProducerUpdatePersonEventHandler : IEventHandler<UpdatePersonEvent>
+    public class ConsumersUpdatePersonEventHandler : IEventHandler<UpdatePersonEvent>
     {
-        private readonly IPersonProducerRepository _personProducerRepository;
-        public ProducerUpdatePersonEventHandler(IPersonProducerRepository personProducerRepository)
+        private readonly IPersonConsumersRepository _personProducerRepository;
+        public ConsumersUpdatePersonEventHandler(IPersonConsumersRepository personProducerRepository)
         {
             _personProducerRepository = personProducerRepository;
         }

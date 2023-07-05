@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Z.RabbitMQ.Bus;
-using Z.RabbitMQ.Consumers.Application.Interfaces;
-using Z.RabbitMQ.Consumers.Application.Services;
-using Z.RabbitMQ.Consumers.Data;
-using Z.RabbitMQ.Consumers.Data.Repository;
-using Z.RabbitMQ.Consumers.Domain.Interfaces;
 using Z.RabbitMQ.Domain.Core.Bus;
+using Z.RabbitMQ.Producer.Application.Interfaces;
+using Z.RabbitMQ.Producer.Application.Services;
+using Z.RabbitMQ.Producer.Data;
+using Z.RabbitMQ.Producer.Data.Repository;
+using Z.RabbitMQ.Producer.Domain.Interfaces;
 
 namespace Z.RabbitMQ.Ioc
 {
@@ -22,12 +22,12 @@ namespace Z.RabbitMQ.Ioc
             });
 
             // Application Services            
-            services.AddTransient<IPersonsConsumersService, PersonConsumersService>();
+            services.AddTransient<IPersonsProducerService, PersonProducerService>();
 
             //Data
-            services.AddTransient<IPersonConsumersRepository, PersonConsumersRepository>();
+            services.AddTransient<IPersonProducerRepository, PersonProducerRepository>();
 
-            services.AddTransient<ConsumersDbContext>();
+            services.AddTransient<ProducerDbContext>();
         }
     }
 }

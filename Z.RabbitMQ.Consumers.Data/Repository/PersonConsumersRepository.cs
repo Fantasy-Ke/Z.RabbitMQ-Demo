@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Z.RabbitMQ.Consumers.Data.Data;
 using Z.RabbitMQ.Consumers.Domain.Interfaces;
 using Z.RabbitMQ.Consumers.Domain.Models;
 
@@ -13,14 +14,28 @@ namespace Z.RabbitMQ.Consumers.Data.Repository
             _context = context;
         }
 
-        public async Task<IEnumerable<Person>> GetPersons()
+        public Task<IEnumerable<Person>> GetProducerEmployees()
         {
-            return await _context.Persons.ToListAsync();
+            throw new NotImplementedException();
         }
 
-        public Person GetPersonById(int Id)
+        public async Task ProducerDeletePerson(int id)
         {
-            return _context.Persons.Find(Id);
+            var employee = _context.Persons.FirstOrDefault(m => m.Id == id);
+            _context.Persons.Remove(employee);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task ProducerInsertPerson(Person employee)
+        {
+            _context.Add(employee);
+           await _context.SaveChangesAsync();
+        }
+
+        public async Task ProducerUpdatePerson(int Id, Person employee)
+        {
+            _context.Update(employee);
+           await  _context.SaveChangesAsync();
         }
     }
 }

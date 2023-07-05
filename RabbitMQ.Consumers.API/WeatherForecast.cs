@@ -1,4 +1,4 @@
-namespace RabbitMQ.Producer.API
+namespace RabbitMQ.Consumers.API
 {
     public class WeatherForecast
     {

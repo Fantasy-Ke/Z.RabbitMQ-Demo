@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Z.RabbitMQ.Consumers.Data;
+using Z.RabbitMQ.Producer.Data;
 
 #nullable disable
 
-namespace Z.RabbitMQ.Consumers.Data.Migrations
+namespace Z.RabbitMQ.Producer.Data.Migrations
 {
-    [DbContext(typeof(ConsumersDbContext))]
+    [DbContext(typeof(ProducerDbContext))]
     [Migration("20230704090540_init")]
     partial class init
     {

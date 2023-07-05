@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Z.RabbitMQ.Consumers.Data.Migrations
+namespace Z.RabbitMQ.Producer.Data.Migrations
 {
     public partial class init : Migration
     {

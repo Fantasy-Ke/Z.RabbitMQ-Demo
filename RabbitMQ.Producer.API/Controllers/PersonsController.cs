@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Z.RabbitMQ.Consumers.Application.Interfaces;
-using Z.RabbitMQ.Consumers.Domain.Models;
+using Z.RabbitMQ.Producer.Application.Interfaces;
+using Z.RabbitMQ.Producer.Domain.Models;
 
-namespace RabbitMQ.Consumers.API.Controllers
+namespace RabbitMQ.Producer.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -10,9 +10,9 @@ namespace RabbitMQ.Consumers.API.Controllers
     {
        
         private readonly ILogger<PersonsController> _logger;
-        private readonly IPersonsConsumersService _personsConsumersService;
+        private readonly IPersonsProducerService _personsConsumersService;
 
-        public PersonsController(ILogger<PersonsController> logger, IPersonsConsumersService personsConsumersService)
+        public PersonsController(ILogger<PersonsController> logger, IPersonsProducerService personsConsumersService)
         {
             _logger = logger;
             _personsConsumersService = personsConsumersService;

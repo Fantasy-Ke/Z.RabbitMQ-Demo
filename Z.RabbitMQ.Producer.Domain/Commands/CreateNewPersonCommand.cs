@@ -1,4 +1,4 @@
-﻿namespace Z.RabbitMQ.Consumers.Domain.Commands
+﻿namespace Z.RabbitMQ.Producer.Domain.Commands
 {
     public class CreateNewPersonCommand : PersonCommand
     {

@@ -15,27 +15,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{FCC76C58
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ.Bus", "RabbitMQ.Bus", "{25557DBA-22D5-4EB9-BA4D-351CE039ACE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Bus", "Z.RabbitMQ.Bus\Z.RabbitMQ.Bus.csproj", "{109BB209-194A-46BB-8C78-0E7F69AD292C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Bus", "Z.RabbitMQ.Bus\Z.RabbitMQ.Bus.csproj", "{109BB209-194A-46BB-8C78-0E7F69AD292C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ.Domain", "RabbitMQ.Domain", "{BE449BCF-10E2-41B8-9D9F-A14A4997912F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Domain.Core", "Z.RabbitMQ.Domain.Core\Z.RabbitMQ.Domain.Core.csproj", "{285B0155-17E4-43CD-BC0D-4AE26CE967DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Domain.Core", "Z.RabbitMQ.Domain.Core\Z.RabbitMQ.Domain.Core.csproj", "{285B0155-17E4-43CD-BC0D-4AE26CE967DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ.Ioc", "RabbitMQ.Ioc", "{1C29B0F0-D4F4-4E75-8B74-D4F571214C79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Ioc", "Z.RabbitMQ.Ioc\Z.RabbitMQ.Ioc.csproj", "{8F39F16D-B2FF-40F7-8BA3-86E52E84A5A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Ioc", "Z.RabbitMQ.Ioc\Z.RabbitMQ.Ioc.csproj", "{8F39F16D-B2FF-40F7-8BA3-86E52E84A5A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Consumers.Domain", "Z.RabbitMQ.Consumers.Domain\Z.RabbitMQ.Consumers.Domain.csproj", "{032F7244-7409-49D4-9E06-214CCC1AD66A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Consumers.Domain", "Z.RabbitMQ.Consumers.Domain\Z.RabbitMQ.Consumers.Domain.csproj", "{032F7244-7409-49D4-9E06-214CCC1AD66A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Consumers.Data", "Z.RabbitMQ.Consumers.Data\Z.RabbitMQ.Consumers.Data.csproj", "{4A6F9572-DC72-40C5-B4B0-D31E08B702BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Consumers.Data", "Z.RabbitMQ.Consumers.Data\Z.RabbitMQ.Consumers.Data.csproj", "{4A6F9572-DC72-40C5-B4B0-D31E08B702BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Consumers.Application", "Z.RabbitMQ.Consumers.Application\Z.RabbitMQ.Consumers.Application.csproj", "{73B3C450-7A32-421F-A957-51DDAD711862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Consumers.Application", "Z.RabbitMQ.Consumers.Application\Z.RabbitMQ.Consumers.Application.csproj", "{73B3C450-7A32-421F-A957-51DDAD711862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Producer.Domain", "Z.RabbitMQ.Producer.Domain\Z.RabbitMQ.Producer.Domain.csproj", "{2232618B-69A8-47EB-BB7C-DBC4D0EEE4E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Producer.Domain", "Z.RabbitMQ.Producer.Domain\Z.RabbitMQ.Producer.Domain.csproj", "{2232618B-69A8-47EB-BB7C-DBC4D0EEE4E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Producer.Data", "Z.RabbitMQ.Producer.Data\Z.RabbitMQ.Producer.Data.csproj", "{85607A15-DE42-4C15-8962-15FCC74A4861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Producer.Data", "Z.RabbitMQ.Producer.Data\Z.RabbitMQ.Producer.Data.csproj", "{85607A15-DE42-4C15-8962-15FCC74A4861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.RabbitMQ.Producer.Application", "Z.RabbitMQ.Producer.Application\Z.RabbitMQ.Producer.Application.csproj", "{BB3BA9C6-B49F-4DD0-A54F-A00470CA84A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.RabbitMQ.Producer.Application", "Z.RabbitMQ.Producer.Application\Z.RabbitMQ.Producer.Application.csproj", "{BB3BA9C6-B49F-4DD0-A54F-A00470CA84A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

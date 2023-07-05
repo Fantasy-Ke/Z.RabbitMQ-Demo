@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Z.RabbitMQ.Consumers.Domain.Models;
+using Z.RabbitMQ.Producer.Domain.Models;
 
-namespace Z.RabbitMQ.Consumers.Data.Data
+namespace Z.RabbitMQ.Producer.Data
 {
-    public class ConsumersDbContext : DbContext
+    public class ProducerDbContext : DbContext
     {
-        public ConsumersDbContext(DbContextOptions options) : base(options)
+        public ProducerDbContext(DbContextOptions options) : base(options)
         {
                 
         }
