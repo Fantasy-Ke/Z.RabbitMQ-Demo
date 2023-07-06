@@ -37,7 +37,7 @@ namespace Z.RabbitMQ.Bus
 
         public void PublishAsync<T>(T @event) where T : Event
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "124.71.15.19" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -85,7 +85,7 @@ namespace Z.RabbitMQ.Bus
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "localhost",
+                HostName = "124.71.15.19",
                 DispatchConsumersAsync = true
             };
             var connection = factory.CreateConnection();

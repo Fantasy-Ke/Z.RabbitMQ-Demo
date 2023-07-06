@@ -11,9 +11,10 @@ namespace Z.RabbitMQ.Producer.Application.Services
         private readonly IPersonProducerRepository _personRepository;
         private readonly IEventBasicBus _bus;
 
-        public PersonProducerService(IPersonProducerRepository personRepository)
+        public PersonProducerService(IPersonProducerRepository personRepository, IEventBasicBus bus)
         {
             _personRepository = personRepository;
+            _bus = bus;
         }
 
         public async Task DeletePerson(int id)
