@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace Z.RabbitMQ.Producer.Data.Migrations
+namespace Z.RabbitMQ.Consumers.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class person : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

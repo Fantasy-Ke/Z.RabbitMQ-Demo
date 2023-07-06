@@ -2,17 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Z.RabbitMQ.Producer.Data;
+using Z.RabbitMQ.Consumers.Data;
 
 #nullable disable
 
-namespace Z.RabbitMQ.Producer.Data.Migrations
+namespace Z.RabbitMQ.Consumers.Data.Migrations
 {
-    [DbContext(typeof(ProducerDbContext))]
-    partial class ProducerDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ConsumersDbContext))]
+    [Migration("20230706090428_person")]
+    partial class person
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace Z.RabbitMQ.Producer.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Z.RabbitMQ.Producer.Domain.Models.Person", b =>
+            modelBuilder.Entity("Z.RabbitMQ.Consumers.Domain.Models.Person", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

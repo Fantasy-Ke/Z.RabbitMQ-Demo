@@ -5,6 +5,6 @@ namespace Z.RabbitMQ.Producer.Domain.Interfaces
     public interface IPersonProducerRepository
     {
         Task<IEnumerable<Person>> GetPersons();
-        Person GetPersonById(int Id);
+        Task<Person> GetPersonById(int Id);
     }
 }

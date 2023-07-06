@@ -11,8 +11,8 @@ using Z.RabbitMQ.Producer.Data;
 namespace Z.RabbitMQ.Producer.Data.Migrations
 {
     [DbContext(typeof(ProducerDbContext))]
-    [Migration("20230704090540_init")]
-    partial class init
+    [Migration("20230706091814_person")]
+    partial class person
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace Z.RabbitMQ.Producer.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Z.RabbitMQ.Consumers.Domain.Models.Person", b =>
+            modelBuilder.Entity("Z.RabbitMQ.Producer.Domain.Models.Person", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

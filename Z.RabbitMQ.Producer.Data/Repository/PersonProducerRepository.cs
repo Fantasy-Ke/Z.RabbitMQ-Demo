@@ -18,9 +18,9 @@ namespace Z.RabbitMQ.Producer.Data.Repository
             return await _context.Persons.ToListAsync();
         }
 
-        public Person GetPersonById(int Id)
+        public async Task<Person> GetPersonById(int Id)
         {
-            return _context.Persons.Find(Id);
+            return await _context.Persons.FindAsync(Id);
         }
     }
 }

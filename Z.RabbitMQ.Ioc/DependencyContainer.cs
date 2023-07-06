@@ -5,6 +5,7 @@ using Z.RabbitMQ.Bus;
 using Z.RabbitMQ.Bus.Options;
 using Z.RabbitMQ.Consumers.Application.Interfaces;
 using Z.RabbitMQ.Consumers.Application.Services;
+using Z.RabbitMQ.Consumers.Data;
 using Z.RabbitMQ.Consumers.Data.Repository;
 using Z.RabbitMQ.Consumers.Domain.EventHandlers;
 using Z.RabbitMQ.Consumers.Domain.Events;
@@ -29,7 +30,7 @@ namespace Z.RabbitMQ.Ioc
             services.AddSingleton<IEventBasicBus, ZRabbitMQBus>(sp =>
             {
                 var scopFactory = sp.GetRequiredService<IServiceScopeFactory>();
-                return new ZRabbitMQBus(sp.GetService<IMediator>(), services);
+                return new ZRabbitMQBus(sp.GetService<IMediator>(), services.BuildServiceProvider());
             });
 
 
@@ -57,6 +58,7 @@ namespace Z.RabbitMQ.Ioc
             services.AddTransient<IPersonConsumersRepository, PersonConsumersRepository>();
 
             services.AddTransient<ProducerDbContext>();
+            services.AddTransient<ConsumersDbContext>();
         }
     }
 }
