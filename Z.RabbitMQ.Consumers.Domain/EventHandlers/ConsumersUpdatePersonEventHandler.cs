@@ -14,7 +14,7 @@ namespace Z.RabbitMQ.Consumers.Domain.EventHandlers
         }
         public async Task HandleAsync(UpdatePersonEvent @event)
         {
-            await _personProducerRepository.ProducerUpdatePerson(@event.Id, new Person()
+            await _personProducerRepository.ConsumersUpdatePerson(@event.Id, new Person()
             {
                 Id = @event.Id,
                 FirstName = @event.FirstName,

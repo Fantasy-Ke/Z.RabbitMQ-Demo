@@ -14,7 +14,7 @@ namespace Z.RabbitMQ.Consumers.Domain.EventHandlers
         }
         public async Task HandleAsync(NewPersonCreatedEvent @event)
         {
-            await _personProducerRepository.ProducerInsertPerson(new Person()
+            await _personProducerRepository.ConsumersInsertPerson(new Person()
             {
                 FirstName = @event.FirstName,
                 LastName = @event.LastName,

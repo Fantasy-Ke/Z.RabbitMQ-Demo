@@ -14,7 +14,7 @@ namespace Z.RabbitMQ.Consumers.Domain.EventHandlers
 
         public async Task HandleAsync(DeletePersonEvent @event)
         {
-            await _personProducerRepository.ProducerDeletePerson(@event.Id);
+            await _personProducerRepository.ConsumersDeletePerson(@event.Id);
         }
     }
 }
