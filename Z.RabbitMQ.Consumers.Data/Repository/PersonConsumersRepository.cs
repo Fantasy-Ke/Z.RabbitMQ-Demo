@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Z.RabbitMQ.Consumers.Data.Data;
-using Z.RabbitMQ.Consumers.Domain.Interfaces;
+﻿using Z.RabbitMQ.Consumers.Domain.Interfaces;
 using Z.RabbitMQ.Consumers.Domain.Models;
 
 namespace Z.RabbitMQ.Consumers.Data.Repository

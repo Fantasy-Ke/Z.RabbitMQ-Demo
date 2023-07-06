@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Z.RabbitMQ.Consumers.Domain.Models;
 
-namespace Z.RabbitMQ.Consumers.Data.Data
+namespace Z.RabbitMQ.Consumers.Data
 {
     public class ConsumersDbContext : DbContext
     {

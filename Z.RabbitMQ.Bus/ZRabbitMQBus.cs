@@ -8,6 +8,8 @@ using Newtonsoft.Json;
 using Z.RabbitMQ.Domain.Core.Bus;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client;
+using Z.RabbitMQ.Bus.Options;
+using Microsoft.Extensions.Configuration;
 
 namespace Z.RabbitMQ.Bus
 {
@@ -18,13 +20,14 @@ namespace Z.RabbitMQ.Bus
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
         private readonly IServiceProvider _serviceProvider;
+        private readonly RabbitMQOptions _rabbitMQOptions;
 
-        public ZRabbitMQBus(IMediator mediator, IServiceProvider serviceProvider)
+        public ZRabbitMQBus(IMediator mediator, IServiceProvider serviceDescriptors)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
-            _serviceProvider = serviceProvider;
+            _serviceProvider = serviceDescriptors;
         }
 
         public Task SendCommandsAsync<T>(T command) where T : EventCommandClass

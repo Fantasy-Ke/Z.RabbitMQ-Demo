@@ -1,10 +1,10 @@
-﻿using MicroRabbitMQ.Transfer.Application.Interfaces;
+﻿using Z.RabbitMQ.Consumers.Application.Interfaces;
 using Z.RabbitMQ.Consumers.Domain.Interfaces;
 using Z.RabbitMQ.Consumers.Domain.Models;
 
 namespace Z.RabbitMQ.Consumers.Application.Services
 {
-    public class PersonConsumersService : IEmployeeTransferService
+    public class PersonConsumersService : IPersonConsumersService
     {
         private readonly IPersonConsumersRepository _personConsumersRepository;
 

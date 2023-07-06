@@ -1,8 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.Reflection;
-using Z.RabbitMQ.Domain.Core.Bus;
 using Z.RabbitMQ.Ioc;
 using Z.RabbitMQ.Producer.Data;
 
@@ -42,6 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.ConfigureEventBus();
 
 app.UseHttpsRedirection();
 

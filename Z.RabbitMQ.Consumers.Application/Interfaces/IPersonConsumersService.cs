@@ -1,8 +1,8 @@
 ﻿using Z.RabbitMQ.Consumers.Domain.Models;
 
-namespace MicroRabbitMQ.Transfer.Application.Interfaces
+namespace Z.RabbitMQ.Consumers.Application.Interfaces
 {
-    public interface IEmployeeTransferService
+    public interface IPersonConsumersService
     {
         Task<IEnumerable<Person>> GetConsumersPerson();
     }
