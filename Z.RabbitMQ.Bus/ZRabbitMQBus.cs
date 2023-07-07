@@ -96,25 +96,22 @@ namespace Z.RabbitMQ.Bus
             channel.QueueDeclare(eventName, false, false, false, null);
 
             var consumer = new AsyncEventingBasicConsumer(channel);
-            consumer.Received += Consumer_Received;
+            consumer.Received += async (model, ea) => {
+
+                var eventName = ea.RoutingKey;
+                var body = ea.Body.ToArray();
+                var message = Encoding.UTF8.GetString(body);
+                try
+                {
+                    await ProcessEvent(eventName, message).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    await Console.Out.WriteLineAsync("监听错误");
+                }
+            };
 
             channel.BasicConsume(eventName, true, consumer);
-        }
-
-        private async Task Consumer_Received(object sender, BasicDeliverEventArgs e)
-        {
-            var eventName = e.RoutingKey;
-            var body = e.Body.ToArray();
-            var message = Encoding.UTF8.GetString(body);
-
-            try
-            {
-                await ProcessEvent(eventName, message).ConfigureAwait(false);
-            }
-            catch (Exception ex)
-            {
-
-            }
         }
 
         private async Task ProcessEvent(string eventName, string message)
