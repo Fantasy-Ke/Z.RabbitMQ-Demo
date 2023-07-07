@@ -5,6 +5,21 @@
 1. 应用程序内部的消息处理和解耦使用 `MediatR`
 2. 应用程序之间的异步消息传递和解耦使用`RabbitMQ `
 
+## RabbitMQ安装
+
+下载以下内容以使用 RabbitMQ:
+
+[下载并安装 ERLANG 最新版本](https://www.erlang.org/downloads),
+
+[下载并安装 RabbitMQ 最新版本](https://www.rabbitmq.com/download.html)
+
+RabbitMQ默认地址: 
+
+http://localhost:15672/
+
+```
+rabbitmq-server           //启动rabbitMQ服务
+```
 
 ### 目录结构
 ```

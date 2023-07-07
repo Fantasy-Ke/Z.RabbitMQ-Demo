@@ -26,7 +26,6 @@ services.AddDbContext<ConsumersDbContext>(options =>
 
 var rabbitOption = new RabbitMQOptions();
 configuration.GetSection("RabbitMQOptions").Bind(rabbitOption);
-services.Configure<RabbitMQOptions>(configuration.GetSection(nameof(RabbitMQOptions)));
 
 DependencyContainer.RegisterServices(services, rabbitOption);
 
