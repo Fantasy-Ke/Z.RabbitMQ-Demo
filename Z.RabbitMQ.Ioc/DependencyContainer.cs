@@ -23,14 +23,14 @@ namespace Z.RabbitMQ.Ioc
 {
     public class DependencyContainer
     {
-        public static void RegisterServices(IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services, RabbitMQOptions rabbitMQOptions)
         {
             //Domain Bus
-            services.BuildServiceProvider();
+
             services.AddSingleton<IEventBasicBus, ZRabbitMQBus>(sp =>
             {
                 var scopFactory = sp.GetRequiredService<IServiceScopeFactory>();
-                return new ZRabbitMQBus(sp.GetService<IMediator>(), services.BuildServiceProvider());
+                return new ZRabbitMQBus(sp.GetService<IMediator>(), services.BuildServiceProvider(), rabbitMQOptions);
             });
 
 

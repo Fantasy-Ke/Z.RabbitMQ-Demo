@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Z.RabbitMQ.Bus.Options;
 using Z.RabbitMQ.Ioc;
 using Z.RabbitMQ.Producer.Data;
 
@@ -14,9 +16,9 @@ builder.Services.AddSwaggerGen();
 var services = builder.Services; 
 
 
-var Configuration = builder.Configuration;
+var configuration = builder.Configuration;
 
-var connectionString = Configuration.GetConnectionString("ProducerDbConnection");
+var connectionString = configuration.GetConnectionString("ProducerDbConnection");
 services.AddDbContext<ProducerDbContext>(options =>
 {
     options.UseSqlServer(connectionString, x => x.MigrationsAssembly("Z.RabbitMQ.Producer.Data"));
@@ -25,8 +27,10 @@ services.AddDbContext<ProducerDbContext>(options =>
 
 services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
 
+var rabbitOption = new RabbitMQOptions();
+configuration.GetSection("RabbitMQOptions").Bind(rabbitOption);
 
-DependencyContainer.RegisterServices(services);
+DependencyContainer.RegisterServices(services, rabbitOption);
 
 
 

@@ -22,12 +22,14 @@ namespace Z.RabbitMQ.Bus
         private readonly IServiceProvider _serviceProvider;
         private readonly RabbitMQOptions _rabbitMQOptions;
 
-        public ZRabbitMQBus(IMediator mediator, IServiceProvider serviceDescriptors)
+        public ZRabbitMQBus(IMediator mediator, IServiceProvider serviceDescriptors, RabbitMQOptions rabbitMQOptions)
         {
             _mediator = mediator;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
             _serviceProvider = serviceDescriptors;
+            _rabbitMQOptions = rabbitMQOptions;
+
         }
 
         public Task SendCommandsAsync<T>(T command) where T : EventCommandClass
@@ -37,7 +39,12 @@ namespace Z.RabbitMQ.Bus
 
         public void PublishAsync<T>(T @event) where T : Event
         {
-            var factory = new ConnectionFactory() { HostName = "124.71.15.19" };
+            var factory = new ConnectionFactory() 
+            { 
+                HostName = _rabbitMQOptions.HostName, 
+                UserName = _rabbitMQOptions.UserName, 
+                Password = _rabbitMQOptions.Password 
+            };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -85,7 +92,9 @@ namespace Z.RabbitMQ.Bus
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "124.71.15.19",
+                HostName = _rabbitMQOptions.HostName,
+                UserName = _rabbitMQOptions.UserName,
+                Password = _rabbitMQOptions.Password,
                 DispatchConsumersAsync = true
             };
             var connection = factory.CreateConnection();
@@ -96,7 +105,8 @@ namespace Z.RabbitMQ.Bus
             channel.QueueDeclare(eventName, false, false, false, null);
 
             var consumer = new AsyncEventingBasicConsumer(channel);
-            consumer.Received += async (model, ea) => {
+            consumer.Received += async (model, ea) =>
+            {
 
                 var eventName = ea.RoutingKey;
                 var body = ea.Body.ToArray();
