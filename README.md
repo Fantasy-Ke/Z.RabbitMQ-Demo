@@ -3,7 +3,9 @@
 ## 应用通讯
 
 1. 应用程序内部的消息处理和解耦使用 `MediatR`
+   1. [MediatR借鉴](https://www.cnblogs.com/yaopengfei/p/16672851.html)
 2. 应用程序之间的异步消息传递和解耦使用`RabbitMQ `
+   1. [RabbitMQ借鉴](https://www.cnblogs.com/CKExp/p/16533386.html)
 
 ## RabbitMQ安装
 
